@@ -1,0 +1,31 @@
+public class Demo {
+
+    public static void main(String[] args) {
+        A a = new A();
+        a.foo();
+        System.out.println("----------A------------");
+
+        C c = new C();
+        c.foo();
+        System.out.println("-----------C-----------");
+
+        A ab = c.new B();
+        ab.foo();
+        System.out.println("----------B------------");
+
+        C.B cb = c.new B();
+        cb.foo();
+        System.out.println("----------CB------------");
+
+        A d = new A() {
+            String x = "D";
+
+            public void foo() {
+                System.out.println("D.foo(): " + x);
+            }
+        };
+        d.foo();
+        System.out.println("----------D------------");
+
+    }
+}
